@@ -75,3 +75,7 @@ alt: 写真の説明（見えているものだけ）
 - `python3 tools/make_site.py` が、トップ・お店の想い・料理へのこだわりを、/en/ /fr/ /zh/ /ko/ にも自動で作る（辞書は tools/i18n_data.py、ページごとのtitle・descriptionは tools/langs.py）。hreflangと言語切りかえも自動で入る。
 - 日本語の固定ページの文章を変えたら、辞書にも同じ文章を足す（足し忘れると、その部分だけ日本語のまま残る）。
 - NEWS記事は日本語のみ。
+
+## Google Search Console
+- 所有権の確認ファイル `src/base/googlef67383f62743634e.html` は、**消さない・変えない**（消すと確認が取り消される）。make_site.py が `site/` にコピーする。
+- サイトマップ（`/sitemap.xml`）は登録済み。新しい記事は make_site.py が自動でサイトマップに入れる。
