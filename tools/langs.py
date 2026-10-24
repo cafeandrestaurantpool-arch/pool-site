@@ -30,6 +30,12 @@ CREW = {  # キャラクターのセリフ（JSの中の文字）
  "一緒に店をつくろう！": {"en": "Let's make this place together!", "fr": "Faisons vivre ce lieu ensemble !", "zh": "一起把店做好吧！", "ko": "함께 가게를 만들어요!"},
  "今日もいい仕込みができました": {"en": "Great prep again today.", "fr": "Une belle préparation aujourd'hui encore.", "zh": "今天也准备得很好。", "ko": "오늘도 준비가 잘 됐어요."},
  "ナチュラルワイン、ありますよ": {"en": "We have natural wine!", "fr": "Nous avons des vins nature !", "zh": "我们有自然葡萄酒哦！", "ko": "내추럴 와인 있어요!"},
+ "AYUです！": {"en": "I'm AYU!", "fr": "Moi, c'est AYU !", "zh": "我是AYU！", "ko": "저는 AYU예요!"},
+ "今日も笑顔でお待ちしています": {"en": "We'll be here with a smile today, too.", "fr": "Nous vous attendons avec le sourire.", "zh": "今天也带着笑容恭候您的光临。", "ko": "오늘도 웃는 얼굴로 기다리고 있을게요."},
+ "おすすめ、聞いてくださいね": {"en": "Ask me for my recommendation!", "fr": "Demandez-moi mes suggestions !", "zh": "欢迎来问我推荐哦！", "ko": "추천 메뉴, 물어봐 주세요!"},
+ "AYAです！": {"en": "I'm AYA!", "fr": "Moi, c'est AYA !", "zh": "我是AYA！", "ko": "저는 AYA예요!"},
+ "ゆっくりしていってね": {"en": "Take your time and relax.", "fr": "Prenez votre temps, détendez-vous.", "zh": "请慢慢享受哦。", "ko": "편안히 즐기다 가세요."},
+ "お料理、できましたよ": {"en": "Your food is ready!", "fr": "Votre plat est prêt !", "zh": "料理做好啦！", "ko": "요리 나왔어요!"},
  "ごゆっくりどうぞ": {"en": "Take your time.", "fr": "Prenez votre temps.", "zh": "请慢慢享用。", "ko": "편안히 즐기세요."}}
 PATH = {"top": "/", "history": "/history.html", "message": "/message.html"}
 
