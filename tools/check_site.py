@@ -42,7 +42,7 @@ def local(path, href):
     if os.path.isdir(base): base = os.path.join(base, "index.html")
     return os.path.normpath(base)
 
-pages = [os.path.join(r, f) for r, _, fs in os.walk(SITE) for f in fs if f.endswith(".html")]
+pages = [os.path.join(r, f) for r, _, fs in os.walk(SITE) for f in fs if f.endswith(".html") and not f.startswith("google")]
 ext = {}
 parsed = {}
 for pg in sorted(pages):

@@ -153,6 +153,9 @@ def main():
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)
     shutil.copytree(os.path.join(BASE, "img"), os.path.join(OUT, "img"))
+    for g in os.listdir(BASE):  # Google Search Console の所有権確認ファイル
+        if g.startswith("google") and g.endswith(".html"):
+            shutil.copy(os.path.join(BASE, g), os.path.join(OUT, g))
     tpl = open(os.path.join(BASE, "page.template.html"), encoding="utf-8").read()
     img = lambda n: os.path.join(BASE, "img", n)
     og_image(img("n_room.jpg"), os.path.join(OUT, "og", "top.jpg"))
