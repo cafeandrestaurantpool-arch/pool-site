@@ -21,6 +21,16 @@ META = {  # ページごとの title / description
              "fr": ("Notre cuisine | CAFE & RESTAURANT POOL, Nara", "Cuisine française décontractée aux légumes de Nara et produits de saison, vins nature. Menus et assiettes message possibles."),
              "zh": ("料理的用心 | CAFE & RESTAURANT POOL 奈良", "使用奈良蔬菜和当季食材的轻松法式料理与自然葡萄酒。备有套餐料理和留言盘，欢迎预约时咨询。"),
              "ko": ("요리에 대한 마음 | CAFE & RESTAURANT POOL 나라", "나라 채소와 제철 재료를 사용한 캐주얼 프렌치와 내추럴 와인. 코스 요리와 메시지 플레이트도 준비되어 있습니다.")}}
+CREW = {  # キャラクターのセリフ（JSの中の文字）
+ "としきです！": {"en": "I'm Toshiki!", "fr": "Moi, c'est Toshiki !", "zh": "我是Toshiki！", "ko": "저는 도시키예요!"},
+ "料理も、ワインも、人も好き。": {"en": "I love food, wine and people.", "fr": "J'aime la cuisine, le vin et les gens.", "zh": "喜欢料理，喜欢葡萄酒，也喜欢人。", "ko": "요리도, 와인도, 사람도 좋아해요."},
+ "今日のおすすめ、聞いてください！": {"en": "Ask me for today's recommendation!", "fr": "Demandez-moi la suggestion du jour !", "zh": "来问问我今天的推荐吧！", "ko": "오늘의 추천 메뉴, 물어보세요!"},
+ "いらっしゃいませ": {"en": "Welcome!", "fr": "Bienvenue !", "zh": "欢迎光临", "ko": "어서 오세요"},
+ "ようたろうです！": {"en": "I'm Yotaro!", "fr": "Moi, c'est Yotaro !", "zh": "我是Yotaro！", "ko": "저는 요타로예요!"},
+ "一緒に店をつくろう！": {"en": "Let's make this place together!", "fr": "Faisons vivre ce lieu ensemble !", "zh": "一起把店做好吧！", "ko": "함께 가게를 만들어요!"},
+ "今日もいい仕込みができました": {"en": "Great prep again today.", "fr": "Une belle préparation aujourd'hui encore.", "zh": "今天也准备得很好。", "ko": "오늘도 준비가 잘 됐어요."},
+ "ナチュラルワイン、ありますよ": {"en": "We have natural wine!", "fr": "Nous avons des vins nature !", "zh": "我们有自然葡萄酒哦！", "ko": "내추럴 와인 있어요!"},
+ "ごゆっくりどうぞ": {"en": "Take your time.", "fr": "Prenez votre temps.", "zh": "请慢慢享用。", "ko": "편안히 즐기세요."}}
 PATH = {"top": "/", "history": "/history.html", "message": "/message.html"}
 
 
@@ -64,6 +74,8 @@ def tr(h, page, l, URL):
     h = h.replace("</title>", "</title>" + alts(page, URL), 1) if False else h.replace('<link rel="canonical"', alts(page, URL) + '<link rel="canonical"', 1)
     h = h.replace("'<span>'+COPY[k]+'</span><em>'+EN[k]+'</em>'", "'<span>'+EN[k]+'</span>'")
     h = h.replace("(i+1)+'番目のバナー'", {"en": "'Banner '+(i+1)", "fr": "'Bannière '+(i+1)", "zh": "'第'+(i+1)+'张横幅'", "ko": "(i+1)+'번째 배너'"}[l])
+    for ja_, tt_ in CREW.items():
+        h = h.replace("'" + ja_ + "'", "'" + tt_[l].replace("'", "\\'") + "'")
     h = h.replace("W='日月火水木金土'", "W=" + str(WD[l]))
     h = re.sub(r"(?<![/\w.-])img/", "/img/", h)
     h = h.replace('href="news/"', 'href="/news/"').replace("'news/'", "'/news/'")
