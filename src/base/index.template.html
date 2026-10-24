@@ -80,10 +80,30 @@ footer{padding:50px max(24px,6vw) 40px;text-align:center;font-size:12px;color:#4
 #top{position:fixed;right:18px;bottom:18px;z-index:70;width:44px;height:44px;border:1px solid var(--n);background:#fff;color:var(--n);display:grid;place-items:center;font-size:14px;opacity:0;pointer-events:none;transition:.3s}#top.on{opacity:1;pointer-events:auto}
 .rv-spacer{height:0}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rvl{opacity:1;transform:none}}
-.cal{flex:1;min-width:250px}.cal h4{margin:0 0 8px;font:300 13px "Unbounded",sans-serif;letter-spacing:.25em}.cal table{width:100%;border-collapse:collapse;text-align:center;font-size:13px}.cal th{font:400 11px "Zen Kaku Gothic New";color:#6f9bb2;padding:4px 0}.cal td{padding:7px 0;border-top:1px solid #dbe6ed}.cal td.x{background:#e3edf3;color:#6f9bb2;text-decoration:line-through}.calw{display:flex;gap:28px;flex-wrap:wrap}.calnote{font-size:12px;color:#4a7a94;margin-top:10px}</style>
+.cal{flex:1;min-width:250px}.cal h4{margin:0 0 8px;font:300 13px "Unbounded",sans-serif;letter-spacing:.25em}.cal table{width:100%;border-collapse:collapse;text-align:center;font-size:13px}.cal th{font:400 11px "Zen Kaku Gothic New";color:#6f9bb2;padding:4px 0}.cal td{padding:7px 0;border-top:1px solid #dbe6ed}.cal td.x{background:#e3edf3;color:#6f9bb2;text-decoration:line-through}.calw{display:flex;gap:28px;flex-wrap:wrap}.calnote{font-size:12px;color:#4a7a94;margin-top:10px}
+#wk{position:fixed;left:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:40;pointer-events:none;width:62px;height:90px;will-change:transform;animation:wkx 40s linear infinite alternate}
+#wk .wf{width:100%;height:100%;animation:wkf 80s steps(1,end) infinite}
+#wk svg{display:block;overflow:visible;position:absolute;left:0;top:0}
+#wk .pp,#wk .pv{display:none}
+#wk.pl,#wk.wv{animation-play-state:paused}#wk.pl .pw,#wk.wv .pw{display:none}#wk.pl .pp{display:block}#wk.wv .pv{display:block}
+#wk.pl .wf,#wk.wv .wf{animation-play-state:paused}
+#wk .wb{position:absolute;left:-14px;bottom:96px;white-space:nowrap;background:#fff;border:2px solid #04486c;color:#04486c;font:700 12px 'Zen Kaku Gothic New',sans-serif;padding:5px 10px;border-radius:10px;display:none}
+#wk.wv .wb{display:block}
+#wk .lA,#wk .lB,#wk .aA,#wk .aB{transform-box:view-box;animation:sw .8s ease-in-out infinite alternate}
+#wk .lA,#wk .lB{transform-origin:100px 222px}#wk .aA,#wk .aB{transform-origin:100px 154px}
+#wk .lA{--a:24deg}#wk .lB{--a:-24deg}#wk .aA{--a:-28deg}#wk .aB{--a:28deg}
+#wk .bb{animation:bob .4s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(var(--a))}to{transform:rotate(calc(var(--a) * -1))}}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+@keyframes wkx{from{transform:translate3d(-80px,0,0)}to{transform:translate3d(calc(100vw + 20px),0,0)}}
+@keyframes wkf{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}}
+@media(min-width:901px){#wk{bottom:14px}}
+@media(prefers-reduced-motion:reduce){#wk{display:none}}
+.lgs{display:flex;gap:2px;align-items:center;margin-left:auto;margin-right:10px}.lgs a,.lgs button{background:none;border:0;color:inherit;font:400 11px 'Zen Kaku Gothic New',sans-serif;padding:6px 6px;cursor:pointer;opacity:.6;letter-spacing:.04em;touch-action:manipulation}.lgs a.on,.lgs button.on{opacity:1;border-bottom:1px solid currentColor}
+.sh0 .lgs{color:#04486c}@media(max-width:560px){.lgs a,.lgs button{font-size:10px;padding:6px 4px}}</style>
 <header id="hd"><a class="lg" href="#hero" aria-label="CAFE &amp; RESTAURANT POOL"><img class="w" src="img/logo-w.png" alt=""><img class="d" src="img/logo-d.png" alt="POOL"></a>
 <nav class="en"><a href="#hero">Home</a><a href="#news">News</a><a href="#item">Main Item</a><a href="#history">Brand History</a><a href="#message">Brand Message</a><a href="#shop">Shop</a><a href="#contact">Contact</a><a href="https://www.instagram.com/cafeandrestaurant_pool/" target="_blank" rel="noopener">Instagram</a><a class="rv" href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">Reserve</a></nav>
-<button id="bg" aria-label="メニュー"><i></i><i></i><i></i></button></header>
+<!--LANGSW--><button id="bg" aria-label="メニュー"><i></i><i></i><i></i></button></header>
 <div id="dr" class="en"><a href="#hero">Home</a><a href="#news">News</a><a href="#item">Main Item</a><a href="#history">Brand History</a><a href="#message">Brand Message</a><a href="#shop">Shop</a><a href="#contact">Contact</a><a href="https://ig.me/m/cafeandrestaurant_pool">Reserve</a></div>
 <aside id="vi"><a href="#hero"><span>T</span><span>O</span><span>P</span></a><a href="#news"><span>N</span><span>E</span><span>W</span><span>S</span></a><a href="#history"><span>B</span><span>R</span><span>A</span><span>N</span><span>D</span></a><a href="#item"><span>I</span><span>T</span><span>E</span><span>M</span></a><a href="#shop"><span>S</span><span>H</span><span>O</span><span>P</span></a><a href="#contact"><span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span></a></aside>
 <main id="hero"><h1 class="sro">奈良・船橋町のカフェ＆レストラン POOL｜ランチ・ディナー・ナチュラルワイン</h1><div id="fxhost"></div><template id="fxt"><style>:host{display:block}.fxr *{box-sizing:border-box}.fxr img{display:block;max-width:100%}.fxr a{color:inherit}.fxr .fxb{position:relative;max-width:1120px;margin:0 auto 22px;aspect-ratio:16/9;overflow:hidden;background:#04486c;color:#fff;container-type:inline-size;isolation:isolate;touch-action:pan-y;--x:50cqw;--y:50cqh;--nx:0;--ny:0;--w:1000px;--h:560px}.fxr .fxb img{user-select:none;-webkit-user-drag:none}.fxr .fxb .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.fxr .chip{position:absolute;left:12px;top:12px;z-index:9;font:600 11px 'Bodoni Moda',serif;letter-spacing:.18em;padding:5px 10px;background:rgba(2,31,48,.72);border:1px solid rgba(143,208,242,.6);pointer-events:none}.fxr .fxb>.lg{position:absolute;right:14px;top:10px;width:clamp(60px,11cqw,120px);z-index:9;pointer-events:none;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}.fxr .tx{position:absolute;left:0;right:0;bottom:0;z-index:8;padding:34px 16px 12px;background:linear-gradient(transparent,rgba(2,31,48,.88));pointer-events:none}.fxr .tx b{display:block;font-size:clamp(14px,2.4cqw,22px);font-weight:800;letter-spacing:.04em}.fxr .tx h3{margin:2px 0 0;font-size:clamp(11px,1.6cqw,15px);font-weight:500;opacity:.85}.fxr .tx small{display:block;margin-top:3px;font-size:clamp(10px,1.4cqw,12px);color:#9fd8f5}.fxr .fxb.hero .tx{display:none}@media(max-width:700px){.fxr .fxb{aspect-ratio:4/3}.fxr .tx h3{display:none}}.fxr /* 1 reveal */
@@ -125,11 +145,125 @@ footer{padding:50px max(24px,6vw) 40px;text-align:center;font-size:12px;color:#4
 </div></section>
 <section class="s" id="item"><div class="w"><div class="hh rvl"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M16 88 C16 52 36 36 60 36 S104 52 104 88 Z M6 96 H114"/><circle cx="60" cy="27" r="6"/><path d="M30 76 C31 64 38 55 48 51"/></svg></span><h2>MAIN ITEM</h2><small>おすすめの一皿</small></div><div class="mi"><a href="#contact" class="rvl"><div class="ph"><img src="img/n_pork2.jpg" alt="本日のお肉料理"></div><h3>本日のお肉料理</h3><p>MAIN DISH</p><em>コース料理ございます。</em></a><a href="#contact" class="rvl"><div class="ph"><img src="img/scallop.jpg" alt="地元のお野菜をふんだんに"></div><h3>地元のお野菜をふんだんに</h3><p>VEGETABLE</p></a><a href="#contact" class="rvl"><div class="ph ct"><img src="img/n_plate.jpg" alt="メッセージプレート"></div><h3>メッセージプレート</h3><p>MESSAGE PLATE</p><em>メッセージプレートご用意できます。ご予約時にお伝えください。</em></a><a href="#contact" class="rvl"><div class="ph"><img src="img/wine1.jpg" alt="ナチュラルワイン"></div><h3>ナチュラルワイン</h3><p>WINE</p></a></div><a class="bt rvl" href="#item">VIEW ALL</a></div></section>
 <section class="s bd" id="shop"><div class="w"><div class="hh rvl"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 42 L18 12 H102 L110 42"/><path d="M10 42 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 "/><path d="M34 12 L30 42 M51 12 L50 42 M68 12 L70 42 M85 12 L90 42"/><path d="M16 56 V110 M104 56 V110 M6 110 H114 M50 110 V76 H70 V110"/><rect x="24" y="70" width="16" height="16"/><rect x="80" y="70" width="16" height="16"/></svg></span><h2>SHOP</h2><small>店舗情報</small></div>
-<div class="sh rvl"><div class="ph"><img src="img/exterior.jpg" alt="CAFE &amp; RESTAURANT POOL の外観"></div><div class="in"><h3>CAFE &amp; RESTAURANT POOL</h3><dl><dt>ADDRESS</dt><dd>〒630-8258 奈良県奈良市船橋町7</dd><dt>TEL</dt><dd><a href="tel:0742426430">0742-42-6430</a></dd><dt>OPEN</dt><dd>ランチ 11:30〜15:00（L.O. 14:30）<br>ディナー 18:00〜22:00（L.O. 21:30）</dd><dt>CLOSED</dt><dd>毎週火曜・第2水曜（そのほか不定休あり）</dd><dt>ACCESS</dt><dd>近鉄奈良駅から徒歩9分<br>JR奈良駅から徒歩11分</dd><dt>PARKING</dt><dd>あり（4台・お店の南30m）。日・祝は終日、平日・土曜は夜のみ。予約はできません。近隣にコインパーキングもあります。</dd></dl><div class="ln"><a href="https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo" target="_blank" rel="noopener">MAP</a><a href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">DM</a><a href="https://www.instagram.com/cafeandrestaurant_pool/" target="_blank" rel="noopener">INSTAGRAM</a></div></div></div><div class="mp rvl"><iframe title="Googleマップ" src="https://www.google.com/maps?q=34.6881509,135.8217667&hl=ja&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="calw rvl" id="calx" style="margin-top:46px"><div class="cal"><h4>2026.10</h4><table><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr><td></td><td></td><td></td><td></td><td class="">1</td><td class="">2</td><td class="">3</td></tr><tr><td class="">4</td><td class="">5</td><td class="x">6</td><td class="">7</td><td class="">8</td><td class="">9</td><td class="">10</td></tr><tr><td class="">11</td><td class="">12</td><td class="x">13</td><td class="x">14</td><td class="">15</td><td class="">16</td><td class="">17</td></tr><tr><td class="">18</td><td class="">19</td><td class="x">20</td><td class="">21</td><td class="">22</td><td class="">23</td><td class="">24</td></tr><tr><td class="">25</td><td class="">26</td><td class="x">27</td><td class="">28</td><td class="">29</td><td class="">30</td><td class="">31</td></tr></table></div><div class="cal"><h4>2026.11</h4><table><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr><td class="">1</td><td class="">2</td><td class="x">3</td><td class="">4</td><td class="">5</td><td class="">6</td><td class="">7</td></tr><tr><td class="">8</td><td class="">9</td><td class="x">10</td><td class="x">11</td><td class="">12</td><td class="">13</td><td class="">14</td></tr><tr><td class="">15</td><td class="">16</td><td class="x">17</td><td class="">18</td><td class="">19</td><td class="">20</td><td class="">21</td></tr><tr><td class="">22</td><td class="">23</td><td class="x">24</td><td class="">25</td><td class="">26</td><td class="">27</td><td class="">28</td></tr><tr><td class="">29</td><td class="">30</td><td></td><td></td><td></td><td></td><td></td></tr></table></div></div><p class="calnote">灰色の日は、お休みです（毎週火曜・第2水曜）。</p></div></section>
-<section class="s ct" id="contact"><div class="w"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><rect x="10" y="20" width="100" height="92"/><path d="M10 46 H110 M34 8 V30 M86 8 V30 M38 84 L54 98 L84 66"/></svg></span><h2>CONTACT</h2><p>ご予約は、お電話またはInstagramのDMでお願いいたします。貸切・パーティのご相談もお気軽にどうぞ。</p><div class="bs"><a class="bt f" href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">DMで予約</a><a class="bt" href="tel:0742426430"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path stroke-width="0.8" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>0742-42-6430</a><a class="bt" href="https://pool-nara-wedding.netlify.app/" target="_blank" rel="noopener">貸切・二次会</a></div><div class="hpg"><script type="text/javascript" src="https://www.hotpepper.jp/hpdsReserveGadget/" charset="UTF-8" data-style="{'bgcolor': 'white', 'btncolor': 'blue'}" data-stores="[{'J001231776': null}]"></script></div></div></section>
+<div class="sh rvl"><div class="ph"><img src="img/exterior.jpg" alt="CAFE &amp; RESTAURANT POOL の外観"></div><div class="in"><h3>CAFE &amp; RESTAURANT POOL</h3><dl><dt>ADDRESS</dt><dd>〒630-8258 奈良県奈良市船橋町7</dd><dt>TEL</dt><dd><a href="tel:0742426430">0742-42-6430</a></dd><dt>OPEN</dt><dd>ランチ 11:30〜15:00（L.O. 14:30）<br>ディナー 18:00〜22:00（L.O. 21:30）</dd><dt>CLOSED</dt><dd>毎週火曜・第2水曜（そのほか不定休あり）</dd><dt>ACCESS</dt><dd>近鉄奈良駅から徒歩9分<br>JR奈良駅から徒歩11分</dd><dt>PARKING</dt><dd>あり（4台・お店の南30m）。日・祝は終日、平日・土曜は夜のみ。予約はできません。近隣にコインパーキングもあります。</dd></dl><div class="ln"><a href="https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo" target="_blank" rel="noopener">MAP</a><a href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">DM</a><a href="https://www.instagram.com/cafeandrestaurant_pool/" target="_blank" rel="noopener">INSTAGRAM</a></div></div></div><div class="mp rvl"><a class="mpl" href="https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo" target="_blank" rel="noopener">Googleマップで、お店の場所を見る →</a></div><div class="calw rvl" id="calx" style="margin-top:46px"><div class="cal"><h4>2026.10</h4><table><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr><td></td><td></td><td></td><td></td><td class="">1</td><td class="">2</td><td class="">3</td></tr><tr><td class="">4</td><td class="">5</td><td class="x">6</td><td class="">7</td><td class="">8</td><td class="">9</td><td class="">10</td></tr><tr><td class="">11</td><td class="">12</td><td class="x">13</td><td class="x">14</td><td class="">15</td><td class="">16</td><td class="">17</td></tr><tr><td class="">18</td><td class="">19</td><td class="x">20</td><td class="">21</td><td class="">22</td><td class="">23</td><td class="">24</td></tr><tr><td class="">25</td><td class="">26</td><td class="x">27</td><td class="">28</td><td class="">29</td><td class="">30</td><td class="">31</td></tr></table></div><div class="cal"><h4>2026.11</h4><table><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr><td class="">1</td><td class="">2</td><td class="x">3</td><td class="">4</td><td class="">5</td><td class="">6</td><td class="">7</td></tr><tr><td class="">8</td><td class="">9</td><td class="x">10</td><td class="x">11</td><td class="">12</td><td class="">13</td><td class="">14</td></tr><tr><td class="">15</td><td class="">16</td><td class="x">17</td><td class="">18</td><td class="">19</td><td class="">20</td><td class="">21</td></tr><tr><td class="">22</td><td class="">23</td><td class="x">24</td><td class="">25</td><td class="">26</td><td class="">27</td><td class="">28</td></tr><tr><td class="">29</td><td class="">30</td><td></td><td></td><td></td><td></td><td></td></tr></table></div></div><p class="calnote">灰色の日は、お休みです（毎週火曜・第2水曜）。</p></div></section>
+<section class="s ct" id="contact"><div class="w"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><rect x="10" y="20" width="100" height="92"/><path d="M10 46 H110 M34 8 V30 M86 8 V30 M38 84 L54 98 L84 66"/></svg></span><h2>CONTACT</h2><p>ご予約は、お電話またはInstagramのDMでお願いいたします。貸切・パーティのご相談もお気軽にどうぞ。</p><div class="bs"><a class="bt f" href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">DMで予約</a><a class="bt" href="tel:0742426430"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path stroke-width="0.8" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>0742-42-6430</a><a class="bt" href="https://pool-nara-wedding.netlify.app/" target="_blank" rel="noopener">貸切・二次会</a></div></div></section>
 <footer><img src="img/logo-d.png" alt="POOL"><div class="lk"><a href="https://www.instagram.com/cafeandrestaurant_pool/" target="_blank" rel="noopener">Instagram</a><a href="https://pool-nara-wedding.netlify.app/" target="_blank" rel="noopener">Private Party</a><a href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">Reserve</a></div>© 2026 CAFE &amp; RESTAURANT POOL</footer>
 <a id="top" href="#hero" aria-label="ページの先頭へ">↑</a>
-<nav class="mb" aria-label="クイック操作"><a class="f" href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><rect x="10" y="20" width="100" height="92"/><path d="M10 46 H110 M34 8 V30 M86 8 V30 M38 84 L54 98 L84 66"/></svg></span>予約</a><a href="tel:0742426430"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path stroke-width="0.8" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>電話</a><a href="https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo" target="_blank" rel="noopener"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 42 L18 12 H102 L110 42"/><path d="M10 42 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 "/><path d="M34 12 L30 42 M51 12 L50 42 M68 12 L70 42 M85 12 L90 42"/><path d="M16 56 V110 M104 56 V110 M6 110 H114 M50 110 V76 H70 V110"/><rect x="24" y="70" width="16" height="16"/><rect x="80" y="70" width="16" height="16"/></svg></span>地図</a></nav><script>var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rvl').forEach(function(n){io.observe(n)});setTimeout(function(){document.querySelectorAll('.rvl').forEach(function(n){n.classList.add('in')})},6000);
+<nav class="mb" aria-label="クイック操作"><a class="f" href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><rect x="10" y="20" width="100" height="92"/><path d="M10 46 H110 M34 8 V30 M86 8 V30 M38 84 L54 98 L84 66"/></svg></span>予約</a><a href="tel:0742426430"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path stroke-width="0.8" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>電話</a><a href="https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo" target="_blank" rel="noopener"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M10 42 L18 12 H102 L110 42"/><path d="M10 42 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 a10 10 0 0 0 20 0 "/><path d="M34 12 L30 42 M51 12 L50 42 M68 12 L70 42 M85 12 L90 42"/><path d="M16 56 V110 M104 56 V110 M6 110 H114 M50 110 V76 H70 V110"/><rect x="24" y="70" width="16" height="16"/><rect x="80" y="70" width="16" height="16"/></svg></span>地図</a></nav><div id="wk" aria-hidden="true"><div class="wb">いらっしゃいませ</div><div class="wf"><svg class="pw" viewBox="40 14 200 290" width="62" height="90" aria-hidden="true" focusable="false"><g class="bb">
+ 
+ <ellipse cx="100" cy="292" rx="50" ry="8" fill="#000" opacity=".14" transform="translate(0,0)"/>
+ 
+ <g class="lB"><rect x="90" y="215" width="20" height="58" rx="9" fill="#1f2733"/><path d="M84 270 h38 q8 0 8 9 v6 h-46z" fill="#fff" stroke="#c9d2dc" stroke-width="2"/><rect x="84" y="282" width="46" height="4" rx="2" fill="#04486c"/></g>
+ 
+ <g class="aB"><rect x="92" y="148" width="17" height="50" rx="8.5" fill="#2b3d57"/><circle cx="100.5" cy="200" r="9" fill="#e2b48c"/></g>
+ 
+ <path d="M64 150 q0 -22 36 -22 q38 0 38 22 v66 q0 12 -12 12 h-52 q-10 0 -10 -12z" fill="#46648a"/>
+ <path d="M72 138 q28 -14 56 0 q-4 16 -28 16 q-24 0 -28 -16z" fill="#2b3d57"/>
+ 
+ <path d="M84 152 h48 l6 82 h-60z" fill="#efe9dc" stroke="#b9ad92" stroke-width="2"/>
+ <path d="M90 154 q10 8 36 0" fill="none" stroke="#b9ad92" stroke-width="3"/>
+ <rect x="92" y="190" width="30" height="20" rx="4" fill="none" stroke="#b9ad92" stroke-width="2"/>
+ <circle cx="108" cy="222" r="3" fill="#c9bfa8"/><path d="M96 212 l6 10" stroke="#cdb78e" stroke-width="3" opacity=".6"/>
+ 
+ <g class="lA"><rect x="90" y="215" width="20" height="58" rx="9" fill="#3a4658"/><path d="M84 270 h38 q8 0 8 9 v6 h-46z" fill="#fff" stroke="#c9d2dc" stroke-width="2"/><rect x="84" y="282" width="46" height="4" rx="2" fill="#04486c"/></g>
+ 
+ <g>
+  <rect x="92" y="118" width="16" height="16" fill="#e2b48c"/>
+  <ellipse cx="100" cy="88" rx="42" ry="44" fill="#f0c9a4"/>
+  <ellipse cx="66" cy="94" rx="8" ry="11" fill="#e2b48c"/>
+  
+  <path d="M60 96 q-2 40 40 44 q40 -2 42 -38 q-6 14 -24 12 q-10 -10 -22 -4 q-12 -6 -22 4 q-10 4 -14 -18z" fill="#3b2a22"/>
+  <path d="M104 98 q8 -8 26 -4 q-8 10 -26 4z" fill="#3b2a22"/>
+  <path d="M112 108 q8 7 17 0" stroke="#7a3b2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <ellipse cx="123" cy="84" rx="5.5" ry="7" fill="#2a1d18"/><circle cx="125" cy="81.5" r="2.2" fill="#fff"/>
+  <path d="M113 74 q10 -6 22 -1" stroke="#3b2a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="138" cy="96" r="6" fill="#f2a58c" opacity=".6"/>
+  
+  <path d="M57 66 q0 -40 45 -40 q43 0 45 36 q-30 7 -90 4z" fill="#1d2b3f"/>
+  <path d="M56 62 q46 8 92 0 q22 0 34 8 q-6 7 -32 5 q-48 2 -94 -3z" fill="#14202f"/>
+  <circle cx="102" cy="26" r="4" fill="#14202f"/>
+  <rect x="84" y="38" width="34" height="14" rx="3" fill="#04486c"/><text x="101" y="49" font-size="11" font-weight="800" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" letter-spacing="1">POOL</text>
+ </g>
+ 
+ <g class="aA"><rect x="92" y="148" width="17" height="52" rx="8.5" fill="#46648a" stroke="#2b3d57" stroke-width="2.5"/><circle cx="100.5" cy="201" r="9.5" fill="#f0c9a4"/><g transform="translate(100.5,201) rotate(-3)"></g></g>
+</g></svg><svg class="pp" viewBox="40 14 200 290" width="62" height="90" aria-hidden="true" focusable="false"><g transform="translate(0,0)">
+ 
+ <ellipse cx="100" cy="292" rx="50" ry="8" fill="#000" opacity=".14" transform="translate(0,0)"/>
+ 
+ <g transform="rotate(0 100 222)"><rect x="90" y="215" width="20" height="58" rx="9" fill="#1f2733"/><path d="M84 270 h38 q8 0 8 9 v6 h-46z" fill="#fff" stroke="#c9d2dc" stroke-width="2"/><rect x="84" y="282" width="46" height="4" rx="2" fill="#04486c"/></g>
+ 
+ <g transform="rotate(10 100 154)"><rect x="92" y="148" width="17" height="50" rx="8.5" fill="#2b3d57"/><circle cx="100.5" cy="200" r="9" fill="#e2b48c"/></g>
+ 
+ <path d="M64 150 q0 -22 36 -22 q38 0 38 22 v66 q0 12 -12 12 h-52 q-10 0 -10 -12z" fill="#46648a"/>
+ <path d="M72 138 q28 -14 56 0 q-4 16 -28 16 q-24 0 -28 -16z" fill="#2b3d57"/>
+ 
+ <path d="M84 152 h48 l6 82 h-60z" fill="#efe9dc" stroke="#b9ad92" stroke-width="2"/>
+ <path d="M90 154 q10 8 36 0" fill="none" stroke="#b9ad92" stroke-width="3"/>
+ <rect x="92" y="190" width="30" height="20" rx="4" fill="none" stroke="#b9ad92" stroke-width="2"/>
+ <circle cx="108" cy="222" r="3" fill="#c9bfa8"/><path d="M96 212 l6 10" stroke="#cdb78e" stroke-width="3" opacity=".6"/>
+ 
+ <g transform="rotate(0 100 222)"><rect x="90" y="215" width="20" height="58" rx="9" fill="#3a4658"/><path d="M84 270 h38 q8 0 8 9 v6 h-46z" fill="#fff" stroke="#c9d2dc" stroke-width="2"/><rect x="84" y="282" width="46" height="4" rx="2" fill="#04486c"/></g>
+ 
+ <g>
+  <rect x="92" y="118" width="16" height="16" fill="#e2b48c"/>
+  <ellipse cx="100" cy="88" rx="42" ry="44" fill="#f0c9a4"/>
+  <ellipse cx="66" cy="94" rx="8" ry="11" fill="#e2b48c"/>
+  
+  <path d="M60 96 q-2 40 40 44 q40 -2 42 -38 q-6 14 -24 12 q-10 -10 -22 -4 q-12 -6 -22 4 q-10 4 -14 -18z" fill="#3b2a22"/>
+  <path d="M104 98 q8 -8 26 -4 q-8 10 -26 4z" fill="#3b2a22"/>
+  <path d="M111 106 q9 14 19 0z" fill="#7a3b2e"/><path d="M113 109 q7 5 14 0" fill="#e57d7d"/>
+  
+  <ellipse cx="123" cy="84" rx="5.5" ry="7" fill="#2a1d18"/><circle cx="125" cy="81.5" r="2.2" fill="#fff"/>
+  <path d="M113 74 q10 -6 22 -1" stroke="#3b2a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="138" cy="96" r="6" fill="#f2a58c" opacity=".6"/>
+  
+  <path d="M57 66 q0 -40 45 -40 q43 0 45 36 q-30 7 -90 4z" fill="#1d2b3f"/>
+  <path d="M56 62 q46 8 92 0 q22 0 34 8 q-6 7 -32 5 q-48 2 -94 -3z" fill="#14202f"/>
+  <circle cx="102" cy="26" r="4" fill="#14202f"/>
+  <rect x="84" y="38" width="34" height="14" rx="3" fill="#04486c"/><text x="101" y="49" font-size="11" font-weight="800" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" letter-spacing="1">POOL</text>
+ </g>
+ 
+ <g transform="rotate(-62 100 154)"><rect x="92" y="148" width="17" height="52" rx="8.5" fill="#46648a" stroke="#2b3d57" stroke-width="2.5"/><circle cx="100.5" cy="201" r="9.5" fill="#f0c9a4"/><g transform="translate(100.5,201) rotate(62)"><g transform="translate(6,-4)"><ellipse cx="0" cy="0" rx="38" ry="9" fill="#f6f3ec" stroke="#cfc7b4" stroke-width="2"/><ellipse cx="0" cy="-2" rx="24" ry="5" fill="#fff" stroke="#e1dac9"/><circle cx="-8" cy="-10" r="7" fill="#d9584a"/><circle cx="5" cy="-12" r="6" fill="#5aa05a"/><circle cx="14" cy="-8" r="4.5" fill="#f2c14e"/></g></g></g>
+</g></svg><svg class="pv" viewBox="40 14 200 290" width="62" height="90" aria-hidden="true" focusable="false"><g transform="translate(0,0)">
+ 
+ <ellipse cx="100" cy="292" rx="50" ry="8" fill="#000" opacity=".14" transform="translate(0,0)"/>
+ 
+ <g transform="rotate(0 100 222)"><rect x="90" y="215" width="20" height="58" rx="9" fill="#1f2733"/><path d="M84 270 h38 q8 0 8 9 v6 h-46z" fill="#fff" stroke="#c9d2dc" stroke-width="2"/><rect x="84" y="282" width="46" height="4" rx="2" fill="#04486c"/></g>
+ 
+ <g transform="rotate(8 100 154)"><rect x="92" y="148" width="17" height="50" rx="8.5" fill="#2b3d57"/><circle cx="100.5" cy="200" r="9" fill="#e2b48c"/></g>
+ 
+ <path d="M64 150 q0 -22 36 -22 q38 0 38 22 v66 q0 12 -12 12 h-52 q-10 0 -10 -12z" fill="#46648a"/>
+ <path d="M72 138 q28 -14 56 0 q-4 16 -28 16 q-24 0 -28 -16z" fill="#2b3d57"/>
+ 
+ <path d="M84 152 h48 l6 82 h-60z" fill="#efe9dc" stroke="#b9ad92" stroke-width="2"/>
+ <path d="M90 154 q10 8 36 0" fill="none" stroke="#b9ad92" stroke-width="3"/>
+ <rect x="92" y="190" width="30" height="20" rx="4" fill="none" stroke="#b9ad92" stroke-width="2"/>
+ <circle cx="108" cy="222" r="3" fill="#c9bfa8"/><path d="M96 212 l6 10" stroke="#cdb78e" stroke-width="3" opacity=".6"/>
+ 
+ <g transform="rotate(0 100 222)"><rect x="90" y="215" width="20" height="58" rx="9" fill="#3a4658"/><path d="M84 270 h38 q8 0 8 9 v6 h-46z" fill="#fff" stroke="#c9d2dc" stroke-width="2"/><rect x="84" y="282" width="46" height="4" rx="2" fill="#04486c"/></g>
+ 
+ <g>
+  <rect x="92" y="118" width="16" height="16" fill="#e2b48c"/>
+  <ellipse cx="100" cy="88" rx="42" ry="44" fill="#f0c9a4"/>
+  <ellipse cx="66" cy="94" rx="8" ry="11" fill="#e2b48c"/>
+  
+  <path d="M60 96 q-2 40 40 44 q40 -2 42 -38 q-6 14 -24 12 q-10 -10 -22 -4 q-12 -6 -22 4 q-10 4 -14 -18z" fill="#3b2a22"/>
+  <path d="M104 98 q8 -8 26 -4 q-8 10 -26 4z" fill="#3b2a22"/>
+  <path d="M111 106 q9 14 19 0z" fill="#7a3b2e"/><path d="M113 109 q7 5 14 0" fill="#e57d7d"/>
+  
+  <ellipse cx="123" cy="84" rx="5.5" ry="7" fill="#2a1d18"/><circle cx="125" cy="81.5" r="2.2" fill="#fff"/>
+  <path d="M113 74 q10 -6 22 -1" stroke="#3b2a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="138" cy="96" r="6" fill="#f2a58c" opacity=".6"/>
+  
+  <path d="M57 66 q0 -40 45 -40 q43 0 45 36 q-30 7 -90 4z" fill="#1d2b3f"/>
+  <path d="M56 62 q46 8 92 0 q22 0 34 8 q-6 7 -32 5 q-48 2 -94 -3z" fill="#14202f"/>
+  <circle cx="102" cy="26" r="4" fill="#14202f"/>
+  <rect x="84" y="38" width="34" height="14" rx="3" fill="#04486c"/><text x="101" y="49" font-size="11" font-weight="800" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" letter-spacing="1">POOL</text>
+ </g>
+ 
+ <g transform="rotate(-125 100 154)"><rect x="92" y="148" width="17" height="52" rx="8.5" fill="#46648a" stroke="#2b3d57" stroke-width="2.5"/><circle cx="100.5" cy="201" r="9.5" fill="#f0c9a4"/><g transform="translate(100.5,201) rotate(125)"></g></g>
+</g></svg></div></div><script>(function(){var w=document.getElementById("wk");if(!w)return;var seq=[["",9000],["pl",3600],["",9000],["wv",3600]],i=0;function n(){var s=seq[i%4];i++;w.className=s[0];setTimeout(n,s[1])}n()})()</script><script>var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rvl').forEach(function(n){io.observe(n)});setTimeout(function(){document.querySelectorAll('.rvl').forEach(function(n){n.classList.add('in')})},6000);
 var t=document.getElementById('top');if(t)addEventListener('scroll',function(){t.classList.toggle('on',scrollY>innerHeight)},{passive:true});(function(){var box=document.getElementById('calx');if(!box)return;var now=new Date(),W='日月火水木金土',html='';
 for(var k=0;k<2;k++){var y=now.getFullYear(),m=now.getMonth()+k;var f=new Date(y,m,1);y=f.getFullYear();m=f.getMonth();
 var last=new Date(y,m+1,0).getDate(),sw=0,c=0;for(var d=1;d<=last;d++){if(new Date(y,m,d).getDay()===3&&++c===2){sw=d;break}}

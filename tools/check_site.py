@@ -51,17 +51,22 @@ for pg in sorted(pages):
     def E(m): errs.append(f"{rel}: {m}")
     def W(m): warns.append(f"{rel}: {m}")
     if not raw.lower().startswith("<!doctype html>"): E("doctype がない")
-    if p.lang != "ja": E("html lang=ja がない")
+    LG = {"en": "en", "fr": "fr", "zh": "zh-Hans", "ko": "ko"}
+    want = LG.get(rel.split("/")[1], "ja") if rel.count("/") > 1 else "ja"
+    if p.lang != want: E(f"html lang={want} がない（{p.lang}）")
+    if rel in ("/index.html", "/history.html", "/message.html") or rel.split("/")[1] in LG:
+        if raw.count('hreflang="x-default"') != 1 or raw.count('rel="alternate" hreflang=') != 6: E("hreflang（5言語+x-default）が揃っていない")
+        if raw.count('class="lgs"') != 1 or "<!--LANGSW-->" in raw: E("言語切りかえが入っていない")
     if not (10 <= len(p.title.strip()) <= 70): W(f"title の長さ {len(p.title.strip())}字（目安 10〜70）: {p.title.strip()}")
     d = p.meta.get("description", "")
     if not d: E("meta description がない")
-    elif not (50 <= len(d) <= 130): W(f"description の長さ {len(d)}字（目安 50〜130）")
+    elif not ((50 <= len(d) <= 130) if want in ("ja",) else (45 <= len(d) <= 160) if want in ("en", "fr") else (30 <= len(d) <= 130)): W(f"description の長さ {len(d)}字")
     exp = URL + (rel[:-10] if rel.endswith("/index.html") else rel)
     if p.canon != exp: E(f"canonical が違う: {p.canon} （正: {exp}）")
     for k in ("og:title", "og:description", "og:image", "og:url", "og:type", "twitter:card", "viewport", "robots"):
         if not p.meta.get(k): E(f"{k} がない")
     if p.h1 != 1: E(f"h1 が {p.h1} 個（1個にする）")
-    if rel != "/index.html":
+    if rel != "/index.html" and not rel.endswith("/index.html") or rel.startswith("/news/"):
         for a in p.imgs:
             if not a.get("alt", "").strip() and a.get("src", "").startswith(("/img/", "/news/", "img/")): E(f"img の alt が空: {a.get('src')}")
     for a in p.imgs:

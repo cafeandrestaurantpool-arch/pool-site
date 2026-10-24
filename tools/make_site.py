@@ -13,6 +13,8 @@ SRC, BASE, OUT = [os.path.join(ROOT, p) for p in ("src/posts", "src/base", "site
 e = html.escape
 
 import json
+sys.path.insert(0, os.path.dirname(__file__))
+import langs
 SITE = json.load(open(os.path.join(ROOT, "src", "site.json"), encoding="utf-8"))
 URL = SITE["url"].rstrip("/")
 NAME = "CAFE & RESTAURANT POOL（カフェ＆レストラン プール）"
@@ -203,20 +205,25 @@ def main():
     os.makedirs(os.path.join(OUT, "news"), exist_ok=True)
     open(os.path.join(OUT, "news", "index.html"), "w", encoding="utf-8").write(page)
     # 固定ページ
+    JP = {}
     fixed = {"history.html": ("お店の想い｜CAFE & RESTAURANT POOL 奈良・船橋町", "もとは下駄屋だった一戸建てをリノベーションした、奈良・船橋町のカフェ＆レストランPOOL。お店の想いと、空間のこと。", "/og/top.jpg"),
              "message.html": ("料理へのこだわり｜CAFE & RESTAURANT POOL 奈良・船橋町", "奈良野菜と旬の素材を使ったカジュアルフレンチと、ナチュラルワイン。コース料理、メッセージプレートのご案内も。", "/og/message.jpg")}
     for f, (t, d, o) in fixed.items():
         frag = open(os.path.join(BASE, f), encoding="utf-8").read()
         name = "お店の想い" if f.startswith("history") else "料理へのこだわり"
-        open(os.path.join(OUT, f), "w", encoding="utf-8").write(finalize(frag, t, d, "/" + f, o, [crumbs([("トップ", "/"), (name, "/" + f)])]))
+        pg = finalize(frag, t, d, "/" + f, o, [crumbs([("トップ", "/"), (name, "/" + f)])])
+        JP[f.split(".")[0]] = pg
     # トップ
     top = open(os.path.join(BASE, "index.template.html"), encoding="utf-8").read()
     li = "".join(f'<li class="rvl in"><a href="/news/{p["slug"]}/"><time datetime="{p["d"].isoformat()}">{p["d"].strftime("%Y.%m.%d")}</time><span class="tg">{e(p["tag"])}</span><span class="tt">{e(p["meta"]["title"])}</span></a></li>' for p in posts[:5])
     top = re.sub(r"<!--NEWS_LIST-->.*?<!--/NEWS_LIST-->", lambda m: li, top, flags=re.S)
-    open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(finalize(top, TOP_TITLE, TOP_DESC, "/", "/og/top.jpg", [RESTAURANT]))
+    JP["top"] = finalize(top, TOP_TITLE, TOP_DESC, "/", "/og/top.jpg", [RESTAURANT])
+    langurls = langs.build(JP, OUT, URL)
+    for k, fn in (("top", "index.html"), ("history", "history.html"), ("message", "message.html")):
+        open(os.path.join(OUT, fn), "w", encoding="utf-8").write(JP[k])
     # sitemap / robots
     today = dt.date.today().isoformat()
-    urls = [("/", today), ("/news/", posts[0]["d"].isoformat() if posts else today), ("/history.html", today), ("/message.html", today)] + [(f"/news/{p['slug']}/", p["d"].isoformat()) for p in posts]
+    urls = [("/", today), ("/news/", posts[0]["d"].isoformat() if posts else today), ("/history.html", today), ("/message.html", today)] + [(u, today) for u in langurls] + [(f"/news/{p['slug']}/", p["d"].isoformat()) for p in posts]
     open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{URL}{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls) + "</urlset>")
     open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
     print("posts:", len(posts), "->", OUT)
