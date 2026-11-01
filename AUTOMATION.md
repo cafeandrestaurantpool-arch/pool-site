@@ -79,3 +79,8 @@ alt: 写真の説明（見えているものだけ）
 ## Google Search Console
 - 所有権の確認ファイル `src/base/googlef67383f62743634e.html` は、**消さない・変えない**（消すと確認が取り消される）。make_site.py が `site/` にコピーする。
 - サイトマップ（`/sitemap.xml`）は登録済み。新しい記事は make_site.py が自動でサイトマップに入れる。
+
+## 公開先（2026-11-01 から GitHub Pages）
+- Netlify の無料枠（公開回数の上限）で公開が止まったため、GitHub Pages に移した。公開アドレスは https://cafeandrestaurantpool-arch.github.io/pool-site/
+- main に push すると、.github/workflows/pages.yml が自動で公開する（回数制限なし。1〜2分で反映）。
+- リンクの書きかえは tools/pages_fix.py が公開のときだけ行う。site/ の中身や make_site.py は、これまでどおりでよい。
