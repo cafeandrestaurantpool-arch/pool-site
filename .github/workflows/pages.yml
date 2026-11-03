@@ -1,32 +1,32 @@
 # main に push されるたびに、site/ を GitHub Pages に公開する（回数制限なし）。
 # リンクは tools/pages_fix.py が GitHub Pages 用に書きかえる（site/ そのものは変えない）。
+# 公開のしかた：できあがったページを gh-pages ブランチに置く（GitHub が自動で公開する）。
+# ※ リポジトリの Pages 設定が「gh-pages ブランチ」になっているため、この方式にしている（2026-11-03）。
 name: Publish to GitHub Pages
 on:
   push:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Prepare site for GitHub Pages
         run: |
           cp -r site _pages
           python3 tools/pages_fix.py _pages pool-site
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _pages
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Push to gh-pages branch
+        run: |
+          cd _pages
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "公開：${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

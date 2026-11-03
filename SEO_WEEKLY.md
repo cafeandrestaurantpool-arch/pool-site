@@ -66,7 +66,7 @@ pool-site に commit・push し、最後の返信は、通知で読めるよう�
 奈良 二次会 会場／奈良 結婚式 二次会／奈良 貸切 パーティー／奈良 1.5次会／近鉄奈良 貸切 レストラン／奈良 歓送迎会 貸切
 
 ## オーナーにしかできないこと（ログインが必要）
-- [ ] **【最優先】pool-site の GitHub Pages を有効にする**：GitHub の pool-site → Settings → Pages → 「Source」を **GitHub Actions** にする → Actions タブで「Publish to GitHub Pages」を Re-run。（11/1の移転以来、POOLのお店サイトは新アドレスで公開されていない。2026-11-03 に判明）
+- [x] pool-site の GitHub Pages を有効にする（2026-11-03 済み：gh-pages ブランチ方式で自動公開）
 - [ ] Google Search Console に、3つの新しいアドレスを「URLプレフィックス」で登録し、`sitemap.xml` を送信する（確認ファイルは3サイトとも設置済み）
 - [ ] Googleビジネスプロフィール（POOL・Allons Bien）の「ウェブサイト」欄を、新しい公式サイトのアドレスに変える ← **地域の検索で一番効く**
 - [ ] Instagram のプロフィールのリンクを、公式サイトにする

@@ -82,7 +82,7 @@ alt: 写真の説明（見えているものだけ）
 
 ## 公開先（2026-11-01 から GitHub Pages）
 - Netlify の無料枠（公開回数の上限）で公開が止まったため、GitHub Pages に移した。公開アドレスは https://cafeandrestaurantpool-arch.github.io/pool-site/
-- main に push すると、.github/workflows/pages.yml が自動で公開する（回数制限なし。1〜2分で反映）。
+- main に push すると、.github/workflows/pages.yml が、できあがったページを gh-pages ブランチに置き、GitHub が自動で公開する（回数制限なし。1〜2分で反映）。gh-pages ブランチは自動で作り直されるので、手で触らない。
 - リンクの書きかえは tools/pages_fix.py が公開のときだけ行う。site/ の中身や make_site.py は、これまでどおりでよい。
 
 
