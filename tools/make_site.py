@@ -229,6 +229,9 @@ def main():
     urls = [("/", today), ("/news/", posts[0]["d"].isoformat() if posts else today), ("/history.html", today), ("/message.html", today)] + [(u, today) for u in langurls] + [(f"/news/{p['slug']}/", p["d"].isoformat()) for p in posts]
     open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{URL}{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls) + "</urlset>")
     open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
+    # 表示を速くする仕上げ：写真の WebP 版（元の JPG は残す）・遅延読み込み・width/height
+    import optimize_images
+    optimize_images.run(OUT)
     print("posts:", len(posts), "->", OUT)
 
 
