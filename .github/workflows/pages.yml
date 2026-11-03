@@ -21,6 +21,8 @@ jobs:
         run: |
           cp -r site _pages
           python3 tools/pages_fix.py _pages pool-site
+          printf '%s' f5583eafcedf018d704433ef65b0ce92 > _pages/f5583eafcedf018d704433ef65b0ce92.txt  # IndexNow の鍵
+          mkdir site_for_indexnow && cp _pages/sitemap.xml site_for_indexnow/
       - name: Push to gh-pages branch
         run: |
           cd _pages
@@ -30,3 +32,7 @@ jobs:
           git add -A
           git commit -q -m "公開：${GITHUB_SHA::7}"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+      - name: Notify search engines (IndexNow)
+        run: |
+          sleep 120  # GitHub Pages が公開し終わるのを待つ
+          python3 tools/indexnow.py site_for_indexnow https://cafeandrestaurantpool-arch.github.io/pool-site/ || true
