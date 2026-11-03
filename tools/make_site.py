@@ -71,7 +71,7 @@ RESTAURANT = {"@context": "https://schema.org", "@type": "Restaurant", "name": "
     "geo": {"@type": "GeoCoordinates", "latitude": 34.6881509, "longitude": 135.8217667},
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "11:30", "closes": "15:00"},
                                   {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "18:00", "closes": "22:00"}],
-    "acceptsReservations": True, "sameAs": [IG], "hasMap": "https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo"}
+    "acceptsReservations": True, "sameAs": [IG, "https://cafeandrestaurantpool.gorp.jp/", "https://pool-nara-wedding.netlify.app/"], "hasMap": "https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo"}
 TOP_TITLE = "奈良・船橋町のカフェ＆レストラン POOL｜ランチ・ディナー・ナチュラルワイン"
 TOP_DESC = "奈良市船橋町の古い建物を生かしたカフェ＆レストランPOOL。旬の奈良野菜を使ったカジュアルフレンチとナチュラルワインを、ランチ・ディナーで。近鉄奈良駅から徒歩9分。ご予約はお電話またはDMで。"
 
@@ -154,7 +154,7 @@ def main():
         shutil.rmtree(OUT)
     shutil.copytree(os.path.join(BASE, "img"), os.path.join(OUT, "img"))
     for g in os.listdir(BASE):  # Google Search Console の所有権確認ファイル
-        if g.startswith("google") and g.endswith(".html"):
+        if (g.startswith("google") and g.endswith(".html")) or g == "_redirects":  # _redirects: 旧Netlifyから新アドレスへ転送
             shutil.copy(os.path.join(BASE, g), os.path.join(OUT, g))
     tpl = open(os.path.join(BASE, "page.template.html"), encoding="utf-8").read()
     img = lambda n: os.path.join(BASE, "img", n)
