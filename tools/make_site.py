@@ -233,6 +233,9 @@ def main():
     import optimize_images
     optimize_images.run(OUT)
     print("posts:", len(posts), "->", OUT)
+    import analytics  # Google Analytics 4（全ページに1回だけ。予約・電話などのクリックも記録）
+    print(f"GA4: {analytics.add_ga4(OUT)}ページ")
 
 
 main()
+
