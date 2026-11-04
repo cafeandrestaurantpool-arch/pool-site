@@ -23,6 +23,7 @@
 - pool-site：`python3 tools/make_site.py && python3 tools/check_site.py`（エラー0）
 - pool-nara-wedding：`python3 tools/make_site.py --src src --out site`
 - allonsbien-nara：HTMLを直接点検
+- AI検索向け：`llms.txt`（allonsbien-nara は直下、pool-site・pool-nara-wedding は `src/base/llms.txt`）の内容が、facts.md や商品ページと食い違っていないか。食い違っていたら llms.txt を直す（facts.md が正）。
 - 3サイトとも、次を確認する：title（全角30字前後）・description（80〜120字）・h1が1つ・canonical・OGP・JSON-LD・画像alt・sitemap.xml に全ページが入っているか・リンク切れ・同じtitleのページがないか・姉妹サイト同士のリンクが生きているか。
 
 ## 3. 改善する（1週間に、サイトごと1〜3か所まで）

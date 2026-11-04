@@ -1,0 +1,26 @@
+# CAFE & RESTAURANT POOL（カフェアンドレストランプール）
+
+> 奈良市船橋町（船橋商店街）のカジュアルフレンチ。もとは下駄屋だった一戸建てをリノベーションした店で、コンセプトは「奈良で奈良野菜を楽しむカジュアルフレンチ」。旬の奈良の野菜や果物を使った料理と、料理に合うナチュラルワインを、ランチとディナーで楽しめます。2018年オープン。
+
+- 住所：〒630-8258 奈良県奈良市船橋町7（船橋商店街）
+- アクセス：近鉄奈良駅から徒歩9分、JR奈良駅から徒歩11分
+- 電話：0742-42-6430
+- 営業時間：ランチ 11:30〜15:00（L.O.14:30）／ディナー 18:00〜22:00（L.O.21:30）
+- 定休日：火曜日、第2水曜日（不定休あり。最新情報はInstagram）
+- 席：40席、全席禁煙、カウンター席・ソファー席あり、貸切可、Wi-Fiあり、英語メニューあり、お子様連れOK
+- 駐車場：4台（お店の南30m）。日・祝は終日、平日・土曜は夜のみ
+- 支払い：クレジットカード、電子マネー、PayPay
+- 看板の一皿：前菜の盛り合わせ
+- 記念日：メッセージ付きデザート・メッセージプレートを用意できる（予約時に伝える）
+- オーナーシェフ：杉原 勇博（奈良生まれ。フランスや東京で修行後、2018年に故郷の奈良でオープン）
+- ご予約：お電話、またはInstagramのDM（@cafeandrestaurant_pool）
+- Instagram：https://www.instagram.com/cafeandrestaurant_pool/
+- 姉妹店：Cafe & Bake Allons Bien（焼き菓子・通販） https://cafeandrestaurantpool-arch.github.io/allonsbien-nara/
+
+## ページ
+- [トップ](https://cafeandrestaurantpool-arch.github.io/pool-site/)
+- [お店の想い](https://cafeandrestaurantpool-arch.github.io/pool-site/history.html)
+- [料理へのこだわり・シェフ](https://cafeandrestaurantpool-arch.github.io/pool-site/message.html)
+- [NEWS（料理・お店の様子）](https://cafeandrestaurantpool-arch.github.io/pool-site/news/)
+- [貸切・ウェディング二次会](https://cafeandrestaurantpool-arch.github.io/pool-nara-wedding/)
+- English: https://cafeandrestaurantpool-arch.github.io/pool-site/en/ ／ Français: https://cafeandrestaurantpool-arch.github.io/pool-site/fr/ ／ 中文: https://cafeandrestaurantpool-arch.github.io/pool-site/zh/ ／ 한국어: https://cafeandrestaurantpool-arch.github.io/pool-site/ko/

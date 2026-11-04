@@ -154,7 +154,7 @@ def main():
         shutil.rmtree(OUT)
     shutil.copytree(os.path.join(BASE, "img"), os.path.join(OUT, "img"))
     for g in os.listdir(BASE):  # Google Search Console の所有権確認ファイル
-        if (g.startswith("google") and g.endswith(".html")) or g == "_redirects":  # _redirects: 旧Netlifyから新アドレスへ転送
+        if (g.startswith("google") and g.endswith(".html")) or g in ("_redirects", "llms.txt"):  # _redirects: 旧Netlifyから新アドレスへ転送
             shutil.copy(os.path.join(BASE, g), os.path.join(OUT, g))
     tpl = open(os.path.join(BASE, "page.template.html"), encoding="utf-8").read()
     img = lambda n: os.path.join(BASE, "img", n)
@@ -228,7 +228,7 @@ def main():
     today = dt.date.today().isoformat()
     urls = [("/", today), ("/news/", posts[0]["d"].isoformat() if posts else today), ("/history.html", today), ("/message.html", today)] + [(u, today) for u in langurls] + [(f"/news/{p['slug']}/", p["d"].isoformat()) for p in posts]
     open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{URL}{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls) + "</urlset>")
-    open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
+    open(os.path.join(OUT, "robots.txt"), "w").write("# AI検索・AIアシスタントのクローラーも歓迎します\nUser-agent: GPTBot\nAllow: /\nUser-agent: OAI-SearchBot\nAllow: /\nUser-agent: ChatGPT-User\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: Claude-SearchBot\nAllow: /\nUser-agent: Claude-User\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\nUser-agent: Applebot-Extended\nAllow: /\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\n" + f"Sitemap: {URL}/sitemap.xml\n")
     # 表示を速くする仕上げ：写真の WebP 版（元の JPG は残す）・遅延読み込み・width/height
     import optimize_images
     optimize_images.run(OUT)
