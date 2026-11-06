@@ -65,15 +65,15 @@ def crumbs(items):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": URL + u} for i, (n, u) in enumerate(items)]}
 
 
-RESTAURANT = {"@context": "https://schema.org", "@type": "Restaurant", "name": "CAFE & RESTAURANT POOL", "alternateName": "カフェ＆レストラン プール",
-    "url": URL + "/", "image": [URL + "/og/top.jpg"], "telephone": "+81-742-42-6430", "servesCuisine": ["フレンチ", "カフェ", "ワイン"],
+RESTAURANT = {"@context": "https://schema.org", "@type": "Restaurant", "name": "CAFE & RESTAURANT POOL", "alternateName": ["カフェ＆レストラン プール", "カフェアンドレストランプール", "POOL（プール）", "POOL 奈良"],
+    "url": URL + "/", "image": [URL + "/og/top.jpg"], "telephone": "+81-742-42-6430", "servesCuisine": ["フレンチ", "ビストロ", "カフェ", "自然派ワイン"], "keywords": "奈良 レストラン, 奈良 ランチ, 奈良 ディナー, 奈良 カフェ, 近鉄奈良 ランチ, 船橋町, ならまち, カジュアルフレンチ, ビストロ, 自然派ワイン, ナチュラルワイン, ナチュール, ビオワイン, 記念日, 誕生日, メッセージプレート, 女子会, デート, 忘年会, 新年会, 歓送迎会, 宴会, 貸切, POOL, プール",
     "address": {"@type": "PostalAddress", "postalCode": "630-8258", "addressRegion": "奈良県", "addressLocality": "奈良市", "streetAddress": "船橋町7", "addressCountry": "JP"},
     "geo": {"@type": "GeoCoordinates", "latitude": 34.6881509, "longitude": 135.8217667},
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "11:30", "closes": "15:00"},
                                   {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "18:00", "closes": "22:00"}],
-    "acceptsReservations": True, "sameAs": [IG, "https://cafeandrestaurantpool.gorp.jp/", "https://pool-nara-wedding.netlify.app/"], "hasMap": "https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo"}
-TOP_TITLE = "奈良・船橋町のカフェ＆レストラン POOL｜ランチ・ディナー・ナチュラルワイン"
-TOP_DESC = "奈良市船橋町の古い建物を生かしたカフェ＆レストランPOOL。旬の奈良野菜を使ったカジュアルフレンチとナチュラルワインを、ランチ・ディナーで。近鉄奈良駅から徒歩9分。ご予約はお電話またはDMで。"
+    "acceptsReservations": True, "sameAs": [IG, "https://cafeandrestaurantpool.gorp.jp/", "https://cafeandrestaurantpool-arch.github.io/pool-nara-wedding/"], "hasMap": "https://www.google.com/maps/search/?api=1&query=34.6881509,135.8217667&query_place_id=ChIJYbS7iPQ7AWARTCyDlQkKDoo"}
+TOP_TITLE = "奈良のカフェ＆レストラン POOL（プール）｜船橋町のランチ・ディナー・自然派ワイン"
+TOP_DESC = "奈良市船橋町のカフェ＆レストラン POOL（プール）。旬の奈良野菜のカジュアルフレンチと、自然派ワイン（ナチュール・ビオワイン）をランチ・ディナーで。記念日のメッセージプレート、女子会、忘年会・新年会・歓送迎会の貸切も。近鉄奈良駅から徒歩9分。"
 
 
 def parse(path, slug):

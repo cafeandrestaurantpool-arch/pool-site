@@ -1,7 +1,16 @@
 import json
 T={}
 def a(ja,en,fr,zh,ko): T[ja]={'en':en,'fr':fr,'zh':zh,'ko':ko}
-a('奈良・船橋町のカフェ＆レストラン POOL｜ランチ・ディナー・ナチュラルワイン','POOL, a café & restaurant in Funabashi-cho, Nara | Lunch, dinner & natural wine','POOL, café-restaurant à Funabashi-cho, Nara | Déjeuner, dîner et vins nature','POOL｜奈良船桥町的咖啡厅＆餐厅｜午餐・晚餐・自然葡萄酒','POOL｜나라 후나바시초의 카페＆레스토랑｜런치・디너・내추럴 와인')
+a('奈良のカフェ＆レストラン POOL（プール）｜船橋町のランチ・ディナー・自然派ワイン','POOL | Restaurant & café in Nara (Funabashi-cho) – lunch, dinner & natural wine','POOL | Restaurant-café à Nara (Funabashi-cho) – déjeuner, dîner, vins nature','POOL｜奈良的咖啡厅＆餐厅｜船桥町的午餐・晚餐・自然派葡萄酒','POOL（풀）｜나라의 카페＆레스토랑｜후나바시초의 런치・디너・내추럴 와인')
+a('ご利用シーン','Occasions','Pour quelles occasions','适用场景','이용 장면')
+a('ランチ・ディナー','Lunch & dinner','Déjeuner et dîner','午餐・晚餐','런치・디너')
+a('奈良・船橋町のカジュアルフレンチ。近鉄奈良駅から徒歩9分です。旬の奈良野菜の料理を、ランチでもディナーでも。','Casual French restaurant in Funabashi-cho, Nara, a 9-minute walk from Kintetsu Nara Station. Seasonal Nara vegetables, for lunch or dinner.','Bistrot français décontracté à Funabashi-cho, Nara, à 9 min à pied de la gare Kintetsu Nara. Légumes de saison de Nara, au déjeuner comme au dîner.','位于奈良船桥町的休闲法式餐厅，从近铁奈良站步行9分钟。午餐、晚餐均可品尝使用当季奈良蔬菜的料理。','나라 후나바시초의 캐주얼 프렌치. 긴테쓰 나라역에서 도보 9분입니다. 제철 나라 채소 요리를 런치로도 디너로도.')
+a('自然派ワイン','Natural wine','Vins nature','自然派葡萄酒','내추럴 와인')
+a('料理に合う自然派ワイン（ナチュール・ビオワイン）を、種類豊富に揃えています。','A wide selection of natural and organic wines chosen to go with our food.','Un large choix de vins nature et bio, choisis pour accompagner nos plats.','备有多种与料理相配的自然派葡萄酒（自然酒・有机葡萄酒）。','요리에 어울리는 내추럴 와인(뱅 나튀르・비오 와인)을 다양하게 갖추고 있습니다.')
+a('記念日・女子会・デート','Anniversaries, dates & get-togethers','Anniversaires, rendez-vous et repas entre amis','纪念日・闺蜜聚会・约会','기념일・여자 모임・데이트')
+a('誕生日や記念日には、メッセージプレートをご用意できます。ご予約時にお伝えください。','For birthdays and anniversaries we can prepare a message plate. Please tell us when you reserve.','Pour un anniversaire, nous pouvons préparer une assiette message. Merci de nous le préciser lors de la réservation.','生日或纪念日可为您准备留言盘，预约时请告知。','생일이나 기념일에는 메시지 플레이트를 준비해 드립니다. 예약 시 말씀해 주세요.')
+a('忘年会・新年会・歓送迎会','Year-end, New Year & farewell parties','Fêtes de fin d’année, du Nouvel An et de départ','忘年会・新年会・欢送迎新会','송년회・신년회・환송영회')
+a('宴会や貸切のご相談も承ります。10名様以上のご予約は、お店にご相談ください。','We are happy to discuss group parties and private hire. For 10 or more guests, please contact us.','Banquets et privatisation sur demande. Pour 10 personnes ou plus, merci de nous contacter.','也可承接宴会及包场。10位以上的预约，请与本店商量。','연회나 대관 상담도 받습니다. 10명 이상 예약은 가게로 문의해 주세요.')
 a('ご予約は、お電話（0742-42-6430）またはInstagramのDMでお願いいたします。','Reservations: please call (0742-42-6430) or send us an Instagram DM.','Réservation : par téléphone (0742-42-6430) ou par message privé Instagram.','预约请致电（0742-42-6430）或通过Instagram私信联系我们。','예약은 전화(0742-42-6430) 또는 인스타그램 DM으로 부탁드립니다.')
 a('DMを送る →','Send a DM →','Envoyer un message →','发送私信 →','DM 보내기 →')
 a('お知らせ','Latest news','Actualités','最新消息','소식')
