@@ -21,6 +21,10 @@
 - [トップ](https://cafeandrestaurantpool-arch.github.io/pool-site/)
 - [お店の想い](https://cafeandrestaurantpool-arch.github.io/pool-site/history.html)
 - [料理へのこだわり・シェフ](https://cafeandrestaurantpool-arch.github.io/pool-site/message.html)
+- [奈良のランチ](https://cafeandrestaurantpool-arch.github.io/pool-site/lunch/)
+- [自然派ワイン（ナチュール・ビオワイン）とディナー](https://cafeandrestaurantpool-arch.github.io/pool-site/natural-wine/)
+- [記念日・誕生日・女子会・デート（メッセージプレート）](https://cafeandrestaurantpool-arch.github.io/pool-site/anniversary/)
+- [忘年会・新年会・歓送迎会・貸切・宴会](https://cafeandrestaurantpool-arch.github.io/pool-site/party/)
 - [NEWS（料理・お店の様子）](https://cafeandrestaurantpool-arch.github.io/pool-site/news/)
 - [貸切・ウェディング二次会](https://cafeandrestaurantpool-arch.github.io/pool-nara-wedding/)
 - English: https://cafeandrestaurantpool-arch.github.io/pool-site/en/ ／ Français: https://cafeandrestaurantpool-arch.github.io/pool-site/fr/ ／ 中文: https://cafeandrestaurantpool-arch.github.io/pool-site/zh/ ／ 한국어: https://cafeandrestaurantpool-arch.github.io/pool-site/ko/

@@ -224,9 +224,14 @@ def main():
     langurls = langs.build(JP, OUT, URL)
     for k, fn in (("top", "index.html"), ("history", "history.html"), ("message", "message.html")):
         open(os.path.join(OUT, fn), "w", encoding="utf-8").write(JP[k])
+    # 用途別ページ（ランチ・自然派ワイン・記念日・忘年会など）
+    import landing
+    lp = landing.build(tpl, OUT, BASE, URL, finalize, crumbs, prep)
+    for path, im in lp:
+        og_image(img(im), os.path.join(OUT, "og", path.strip("/") + ".jpg"))
     # sitemap / robots
     today = dt.date.today().isoformat()
-    urls = [("/", today), ("/news/", posts[0]["d"].isoformat() if posts else today), ("/history.html", today), ("/message.html", today)] + [(u, today) for u in langurls] + [(f"/news/{p['slug']}/", p["d"].isoformat()) for p in posts]
+    urls = [("/", today), ("/news/", posts[0]["d"].isoformat() if posts else today), ("/history.html", today), ("/message.html", today)] + [(path, today) for path, _ in lp] + [(u, today) for u in langurls] + [(f"/news/{p['slug']}/", p["d"].isoformat()) for p in posts]
     open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{URL}{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls) + "</urlset>")
     open(os.path.join(OUT, "robots.txt"), "w").write("# AI検索・AIアシスタントのクローラーも歓迎します\nUser-agent: GPTBot\nAllow: /\nUser-agent: OAI-SearchBot\nAllow: /\nUser-agent: ChatGPT-User\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: Claude-SearchBot\nAllow: /\nUser-agent: Claude-User\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\nUser-agent: Applebot-Extended\nAllow: /\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\n" + f"Sitemap: {URL}/sitemap.xml\n")
     # 表示を速くする仕上げ：写真の WebP 版（元の JPG は残す）・遅延読み込み・width/height
