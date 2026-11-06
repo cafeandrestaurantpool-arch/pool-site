@@ -9,7 +9,7 @@
 """
 import os
 
-GA_ID = "G-MOR6JDYLBK"
+GA_ID = "G-M0R6JDYLBK"
 
 SNIPPET = (
     f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>'

@@ -13,7 +13,7 @@
 - 各リポジトリの `SEO_FOCUS.md` … 「今週ねらうテーマ」。毎日の記事担当が、書く前に読む
 
 ## 1. アクセス・検索の状況を集める
-1. **Google アナリティクス（GA4）**：3サイトとも測定ID `G-MOR6JDYLBK`（同じプロパティ。ページのアドレスの `/allonsbien-nara/`・`/pool-site/`・`/pool-nara-wedding/` でサイトを見分ける）。記録しているクリック：予約 reservation_click、電話 phone_click、楽天市場 shop_click、Instagram instagram_click、二次会サイトへ wedding_click、姉妹店へ sister_click。
+1. **Google アナリティクス（GA4）**：3サイトとも測定ID `G-M0R6JDYLBK`（同じプロパティ。ページのアドレスの `/allonsbien-nara/`・`/pool-site/`・`/pool-nara-wedding/` でサイトを見分ける）。記録しているクリック：予約 reservation_click、電話 phone_click、楽天市場 shop_click、Instagram instagram_click、二次会サイトへ wedding_click、姉妹店へ sister_click。
    Googleドライブで、名前に「GA4」「アナリティクス」を含むスプレッドシート（オーナーが「GA4 Reports Builder」で毎週自動更新にしたもの）を探し、あれば、サイトごとの 表示回数・ユーザー数・流入元（organic＝検索から、など）・よく見られたページ・クリック数 をまとめ、先週と比べる。
 2. **本当のデータ（Search Console）**：Googleドライブで、名前に「Search Console」「検索パフォーマンス」「アナリティクス」「Analytics」を含むファイル（オーナーが書き出して置いたCSV・スプレッドシート）を `search_files` で探す。直近のものがあれば読み、クリック数・表示回数・平均掲載順位・よく使われた検索語・よく見られたページを、サイトごとにまとめる。
 3. **検索順位のチェック**：下の「ねらう言葉」を WebSearch（standard）で1つずつ検索し、結果の上位に自分のサイト（3つの公開アドレス）が何番目に出るかを記録する。出なければ「圏外」。あわせて、上位に出ている競合ページの「タイトルの付け方・中身の切り口」をメモする。
