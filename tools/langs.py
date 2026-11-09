@@ -9,8 +9,8 @@ NAMES = [("ja", "JA"), ("en", "EN"), ("fr", "FR"), ("zh", "中文"), ("ko", "한
 WD = {"en": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "fr": ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"],
       "zh": ["日", "一", "二", "三", "四", "五", "六"], "ko": ["일", "월", "화", "수", "목", "금", "토"]}
 META = {  # ページごとの title / description
- "top": {"en": ("POOL | Restaurant & café in Nara – lunch, dinner, natural wine", "Restaurant & café in Funabashi-cho, Nara. Casual French food with Nara vegetables and natural wine, lunch and dinner. Anniversaries and group parties. 9 min from Kintetsu Nara Station."),
-         "fr": ("POOL | Restaurant-café à Nara – déjeuner, dîner, vins nature", "Restaurant-café à Funabashi-cho, Nara. Cuisine française aux légumes de Nara et vins nature, midi et soir. Anniversaires et banquets. À 9 min de la gare Kintetsu Nara."),
+ "top": {"en": ("POOL | Restaurant & café in Nara – lunch, dinner, natural wine", "Café & restaurant in Funabashi-cho, Nara: casual French food with Nara vegetables and natural wine, lunch and dinner. 9 min walk from Kintetsu Nara Station."),
+         "fr": ("POOL | Restaurant-café à Nara – déjeuner, dîner, vins nature", "Café-restaurant à Funabashi-cho, Nara : cuisine française aux légumes de Nara et vins nature, midi et soir. À 9 min de la gare Kintetsu Nara."),
          "zh": ("POOL｜奈良的咖啡厅＆餐厅｜船桥町的午餐・晚餐・自然派葡萄酒", "POOL是位于奈良市船桥町老建筑中的咖啡厅＆餐厅。午餐与晚餐供应使用当季奈良蔬菜的轻松法式料理和自然派葡萄酒。也可承接纪念日、忘年会、新年会等宴会及包场。从近铁奈良站步行9分钟。请通过电话或Instagram私信预约。"),
          "ko": ("POOL（풀）｜나라의 카페＆레스토랑｜후나바시초의 런치・디너・내추럴 와인", "POOL은 나라시 후나바시초의 오래된 건물을 살린 카페＆레스토랑입니다. 제철 나라 채소를 사용한 캐주얼 프렌치와 내추럴 와인을 런치와 디너로 즐기실 수 있습니다. 긴테쓰 나라역에서 도보 9분. 예약은 전화 또는 인스타그램 DM으로.")},
  "history": {"en": ("Our story | CAFE & RESTAURANT POOL, Nara", "A former geta shop renovated into POOL, a café & restaurant in Funabashi-cho, Nara. Our story and our space."),
