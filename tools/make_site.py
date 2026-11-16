@@ -183,9 +183,18 @@ def main():
         prev_ = posts[i + 1] if i + 1 < len(posts) else None
         next_ = posts[i - 1] if i > 0 else None
         pn = '<div class="pn"><span>' + (f'<a href="/news/{prev_["slug"]}/">← {e(prev_["meta"]["title"])}</a>' if prev_ else "") + '</span><span>' + (f'<a href="/news/{next_["slug"]}/">{e(next_["meta"]["title"])} →</a>' if next_ else "") + "</span></div>"
+        # ご利用シーン：用途別ページへのリンク（記事の中身に合うものを先頭に）。記事から用途別ページへ、内部リンクをつなぐ
+        scenes = [("/lunch/", "奈良でランチ", ("ランチ",)), ("/natural-wine/", "自然派ワイン", ("ワイン", "ナチュール", "ビオ")),
+                  ("/anniversary/", "記念日・お祝い", ("記念日", "誕生日", "ケーキ", "お祝い", "メッセージ")),
+                  ("/party/", "忘年会・新年会・貸切", ("忘年会", "新年会", "歓送迎会", "宴会", "貸切", "大皿", "パーティー"))]
+        hay = p["meta"]["title"] + " " + txt
+        scenes.sort(key=lambda sc: not any(w in hay for w in sc[2]))
+        scene = ('<nav aria-label="ご利用シーン" style="margin:2.2em 0 1em;padding-top:1.2em;border-top:1px solid rgba(0,0,0,.12)">'
+                 '<p style="margin:0 0 .6em;font-size:13px;letter-spacing:.08em">ご利用シーン</p><p style="margin:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px">'
+                 + "".join(f'<a href="{u}">{e(lb)} →</a>' for u, lb, _ in scenes) + '</p></nav>')
         cta = ('<div class="go"><a class="f" href="https://ig.me/m/cafeandrestaurant_pool" target="_blank" rel="noopener">DMで予約</a>'
                '<a href="tel:0742426430">0742-42-6430</a><a href="/news/">NEWS一覧へ</a></div>')
-        body_html = f'<div class="meta"><time datetime="{p["d"].isoformat()}">{ds}</time><span class="tg">{e(p["tag"])}</span></div><h1>{e(p["meta"]["title"])}</h1>{cov}{art}{pn}{cta}'
+        body_html = f'<div class="meta"><time datetime="{p["d"].isoformat()}">{ds}</time><span class="tg">{e(p["tag"])}</span></div><h1>{e(p["meta"]["title"])}</h1>{cov}{art}{scene}{pn}{cta}'
         title = p["meta"]["title"] + "｜NEWS｜CAFE & RESTAURANT POOL 奈良"
         path = f'/news/{p["slug"]}/'
         og = f'/og/{p["slug"]}.jpg' if p["cover"] else "/og/top.jpg"
